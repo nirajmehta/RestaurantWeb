@@ -11,7 +11,7 @@ namespace RestaurantWeb.Interfaces
     {
         List<FoodItem> GetMenuList();
 
-        bool PlaceOrder(IList<FoodItem> items, int id);
+        bool PlaceOrder(IList<FoodItem> items, int id, out decimal grandTotal);
 
 
     }

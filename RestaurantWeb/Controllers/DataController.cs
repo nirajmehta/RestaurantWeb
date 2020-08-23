@@ -44,7 +44,8 @@ namespace RestaurantWeb.Controllers
         [AuthorizeUser]
         public ActionResult PlaceOrder(IList<FoodItem> items, int id)
         {
-            bool dbSuccess = _dataService.PlaceOrder(items, id);
+            decimal grandTotal = 0;
+            bool dbSuccess = _dataService.PlaceOrder(items, id, out grandTotal);
 
             if (dbSuccess)
                 return Json("success: true", JsonRequestBehavior.AllowGet);

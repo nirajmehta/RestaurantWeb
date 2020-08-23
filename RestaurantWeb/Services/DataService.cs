@@ -28,9 +28,10 @@ namespace RestaurantWeb.Services
             return menuItems;
         }
 
-        public bool PlaceOrder(IList<FoodItem> items, int id)
+        public bool PlaceOrder(IList<FoodItem> items, int id, out decimal grandTotal)
         {
             bool dbSuccess = false;
+            grandTotal = 0;
             try
             {
                 Order o = new Order();
@@ -41,7 +42,7 @@ namespace RestaurantWeb.Services
                 _appDbContext.SaveChanges();
 
                 int orderId = o.Id;
-                decimal grandTotal = 0;
+                //decimal grandTotal = 0;
                 foreach (var f in items)
                 {
                     OrderDetail orderDetail = new OrderDetail
@@ -63,9 +64,9 @@ namespace RestaurantWeb.Services
             }
             catch (Exception ex)
             {
-                //log ex
+                //log exception
                 dbSuccess = false;
-            }
+            }            
 
             return dbSuccess;
         }
