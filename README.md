@@ -2,7 +2,8 @@
 This web application has been created with Reactjs and MVC5. <br/>
 The application has been built in Visual Studio 2019 Community Edition, with .Net Framework Version 4.6.1 <br/>
 It is working in VS 2019, however it hasn't been tested using earlier versions of VS. <br/>
-To get the app, download the zip from the GitHub repository. <br />
+The solution consists of two projects (1)RestaurantWeb (the application) and (2)RestaurantTests (unit tests) <br/>
+To get the solution, download the zip from the GitHub repository. <br />
 Open the solution in VS 2019, and Clean Solution and Rebuild Solution. <br />
 The Clean and Rebuild makes sure that it runs properly, and doesn't show "could not find path bin\roslyn\csc.exe" error. <br />
 The application is using SQL Server ((LocalDb)\MSSQLLocalDB) that comes with VS 2019. <br />
